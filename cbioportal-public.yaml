@@ -1,0 +1,34 @@
+apiVersion: v1
+data:
+  BITLY_ACCESS_TOKEN: 7fdf316a43437f8a6291b99963b371d0229d4b2e
+  BITLY_URL: https://api.bit.ly/shorten?login=cbioportal&apiKey=R_b5b17a43582f526e592e05257b43718b&
+  DB_CONNECTION_STRING: jdbc:mysql://10.1.192.46:3306/cgds_triage?zeroDateTimeBehavior=convertToNull&useSSL=false
+  DB_HOST: 10.1.192.46
+  DB_PASSWORD: In-defense-of40foods
+  DB_PORTAL_DB_NAME: cgds_triage
+  DB_USER: cgds_admin
+  GOOGLE_ANALYTICS_PROFILE_ID: UA-17134933-1
+  GOOGLE_PLUS_CONSUMER_KEY: 376866430586-3s38asmophvi48pmqcvjvg5meagpjp7l.apps.googleusercontent.com
+  GOOGLE_PLUS_CONSUMER_SECRET: I2nODoTPHgn0HMhnA6Vn_AjY
+  MATCHMINER_TOKEN: fb4d6830-d3aa-481b-bcd6-270d69790e11
+  MICROSOFT_LIVE_CONSUMER_KEY: 20ff72f9-d0a0-4f33-a9af-061a6473072f
+  MICROSOFT_LIVE_CONSUMER_SECRET: jITMwn.P0VJriNL-Qf.9/UWGxT5Et8d@
+  ONCOKB_TOKEN: fdc6d965-5a53-4e9a-8cc2-abf5668bc49d
+  REDIS_PASSWORD: amazingr3d1sp4ssw0rd
+  REDIS_URL: redis://:amazingr3d1sp4ssw0rd@cbioportal-redis-public-master:6379
+  SENTRY_DSN: https://f892d0535b6d4444b9a35baa731fbd10:77107be864d8464084271584e9f1b072@sentry.io/236782
+  SENTRY_FRONTEND_DSN: https://bca41e5bee404bef99a5705711671d19@sentry.io/1310095
+  SESSION_SERVICE_USER_NAME: session_service_user
+  SESSION_SERVICE_USER_PASSWORD: d4b3stS3ssi4ns3rvicePASSW000rdz1337
+  SHOW_CIVIC: "true"
+  SKIN_SHOW_TWEET_BUTTON: "true"
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"BITLY_ACCESS_TOKEN":"7fdf316a43437f8a6291b99963b371d0229d4b2e","BITLY_URL":"https://api.bit.ly/shorten?login=cbioportal\u0026apiKey=R_b5b17a43582f526e592e05257b43718b\u0026","DB_CONNECTION_STRING":"jdbc:mysql://publicdb.cbioportal.org:3306/cgds_public?zeroDateTimeBehavior=convertToNull\u0026useSSL=false","DB_HOST":"publicdb.cbioportal.org","DB_PASSWORD":"cbio_pass","DB_PORTAL_DB_NAME":"cgds_public","DB_USER":"cbio_user","GOOGLE_ANALYTICS_PROFILE_ID":"UA-17134933-1","GOOGLE_PLUS_CONSUMER_KEY":"376866430586-3s38asmophvi48pmqcvjvg5meagpjp7l.apps.googleusercontent.com","GOOGLE_PLUS_CONSUMER_SECRET":"I2nODoTPHgn0HMhnA6Vn_AjY","MATCHMINER_TOKEN":"fb4d6830-d3aa-481b-bcd6-270d69790e11","MICROSOFT_LIVE_CONSUMER_KEY":"20ff72f9-d0a0-4f33-a9af-061a6473072f","MICROSOFT_LIVE_CONSUMER_SECRET":"jITMwn.P0VJriNL-Qf.9/UWGxT5Et8d@","ONCOKB_TOKEN":"fdc6d965-5a53-4e9a-8cc2-abf5668bc49d","REDIS_PASSWORD":"amazingr3d1sp4ssw0rd","REDIS_URL":"redis://:amazingr3d1sp4ssw0rd@cbioportal-redis-public-master:6379","SENTRY_DSN":"https://f892d0535b6d4444b9a35baa731fbd10:77107be864d8464084271584e9f1b072@sentry.io/236782","SENTRY_FRONTEND_DSN":"https://bca41e5bee404bef99a5705711671d19@sentry.io/1310095","SESSION_SERVICE_USER_NAME":"session_service_user","SESSION_SERVICE_USER_PASSWORD":"d4b3stS3ssi4ns3rvicePASSW000rdz1337","SHOW_CIVIC":"true","SKIN_SHOW_TWEET_BUTTON":"true"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"cbioportal-public","namespace":"default"}}
+  creationTimestamp: "2023-12-14T15:27:55Z"
+  name: cbioportal-public
+  namespace: default
+  resourceVersion: "4067836"
+  uid: 8dd26298-0e81-4b4f-aa0b-5dfaa9a757e8

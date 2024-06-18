@@ -1,0 +1,186 @@
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    alpha.kubernetes.io/provided-node-ip: 10.1.192.208
+    csi.volume.kubernetes.io/nodeid: '{"ebs.csi.aws.com":"i-0b64bf37c0529b24c","efs.csi.aws.com":"i-0b64bf37c0529b24c"}'
+    node.alpha.kubernetes.io/ttl: "0"
+    volumes.kubernetes.io/controller-managed-attach-detach: "true"
+  creationTimestamp: "2023-12-14T15:32:46Z"
+  labels:
+    alpha.eksctl.io/cluster-name: cbioportal-dev
+    alpha.eksctl.io/nodegroup-name: eks-public-cbioportal
+    beta.kubernetes.io/arch: arm64
+    beta.kubernetes.io/instance-type: r7g.xlarge
+    beta.kubernetes.io/os: linux
+    eks.amazonaws.com/capacityType: ON_DEMAND
+    eks.amazonaws.com/nodegroup: eks-public-cbioportal
+    eks.amazonaws.com/nodegroup-image: ami-041caf79b7b8fd913
+    eks.amazonaws.com/sourceLaunchTemplateId: lt-0ba044b5a0ba6f0e6
+    eks.amazonaws.com/sourceLaunchTemplateVersion: "1"
+    failure-domain.beta.kubernetes.io/region: us-east-1
+    failure-domain.beta.kubernetes.io/zone: us-east-1c
+    k8s.io/cloud-provider-aws: 86dbf5df3ce4a6ca8ba2f36b675af5b6
+    kubernetes.io/arch: arm64
+    kubernetes.io/hostname: ip-10-1-192-208.ec2.internal
+    kubernetes.io/os: linux
+    node.kubernetes.io/instance-type: r7g.xlarge
+    topology.ebs.csi.aws.com/zone: us-east-1c
+    topology.kubernetes.io/region: us-east-1
+    topology.kubernetes.io/zone: us-east-1c
+  name: ip-10-1-192-208.ec2.internal
+  resourceVersion: "33407389"
+  uid: d3c47ed7-6c71-4dfa-843e-ac5f48019298
+spec:
+  providerID: aws:///us-east-1c/i-0b64bf37c0529b24c
+  taints:
+  - effect: NoSchedule
+    key: dedicated
+    value: eks-public-cbioportal
+status:
+  addresses:
+  - address: 10.1.192.208
+    type: InternalIP
+  - address: ip-10-1-192-208.ec2.internal
+    type: InternalDNS
+  - address: ip-10-1-192-208.ec2.internal
+    type: Hostname
+  allocatable:
+    cpu: 3920m
+    ephemeral-storage: "76215832858"
+    hugepages-1Gi: "0"
+    hugepages-2Mi: "0"
+    hugepages-32Mi: "0"
+    hugepages-64Ki: "0"
+    memory: 31233872Ki
+    pods: "58"
+  capacity:
+    cpu: "4"
+    ephemeral-storage: 83864556Ki
+    hugepages-1Gi: "0"
+    hugepages-2Mi: "0"
+    hugepages-32Mi: "0"
+    hugepages-64Ki: "0"
+    memory: 32250704Ki
+    pods: "58"
+  conditions:
+  - lastHeartbeatTime: "2024-03-26T19:49:21Z"
+    lastTransitionTime: "2024-03-12T04:15:36Z"
+    message: kubelet has sufficient memory available
+    reason: KubeletHasSufficientMemory
+    status: "False"
+    type: MemoryPressure
+  - lastHeartbeatTime: "2024-03-26T19:49:21Z"
+    lastTransitionTime: "2024-03-12T04:15:36Z"
+    message: kubelet has no disk pressure
+    reason: KubeletHasNoDiskPressure
+    status: "False"
+    type: DiskPressure
+  - lastHeartbeatTime: "2024-03-26T19:49:21Z"
+    lastTransitionTime: "2024-03-12T04:15:36Z"
+    message: kubelet has sufficient PID available
+    reason: KubeletHasSufficientPID
+    status: "False"
+    type: PIDPressure
+  - lastHeartbeatTime: "2024-03-26T19:49:21Z"
+    lastTransitionTime: "2024-03-12T04:15:36Z"
+    message: kubelet is posting ready status
+    reason: KubeletReady
+    status: "True"
+    type: Ready
+  daemonEndpoints:
+    kubeletEndpoint:
+      Port: 10250
+  images:
+  - names:
+    - docker.io/cbioportal/cbioportal@sha256:98d0a9be6da7449d7a2e011adbe3d558cf93ec7f6699ed6232b4d487ec89f12b
+    - docker.io/cbioportal/cbioportal:5.4.7-web-shenandoah
+    sizeBytes: 400031366
+  - names:
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/aws-efs-csi-driver@sha256:d7319da3ab111e7471813b552df249d583df58a994d959b1a198959117399662
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/aws-efs-csi-driver:v1.7.6
+    sizeBytes: 105554090
+  - names:
+    - 066635153087.dkr.ecr.il-central-1.amazonaws.com/amazon-k8s-cni-init:v1.15.4
+    - 066635153087.dkr.ecr.il-central-1.amazonaws.com/amazon-k8s-cni-init:v1.15.4-eksbuild.1
+    - 296578399912.dkr.ecr.ap-southeast-3.amazonaws.com/amazon-k8s-cni-init:v1.15.4
+    - 296578399912.dkr.ecr.ap-southeast-3.amazonaws.com/amazon-k8s-cni-init:v1.15.4-eksbuild.1
+    - 455263428931.dkr.ecr.eu-south-2.amazonaws.com/amazon-k8s-cni-init:v1.15.4
+    sizeBytes: 57026138
+  - names:
+    - 066635153087.dkr.ecr.il-central-1.amazonaws.com/amazon-k8s-cni:v1.15.4
+    - 066635153087.dkr.ecr.il-central-1.amazonaws.com/amazon-k8s-cni:v1.15.4-eksbuild.1
+    - 296578399912.dkr.ecr.ap-southeast-3.amazonaws.com/amazon-k8s-cni:v1.15.4
+    - 296578399912.dkr.ecr.ap-southeast-3.amazonaws.com/amazon-k8s-cni:v1.15.4-eksbuild.1
+    - 455263428931.dkr.ecr.eu-south-2.amazonaws.com/amazon-k8s-cni:v1.15.4
+    sizeBytes: 43403906
+  - names:
+    - 066635153087.dkr.ecr.il-central-1.amazonaws.com/amazon-k8s-cni:v1.12.6-eksbuild.2
+    - 296578399912.dkr.ecr.ap-southeast-3.amazonaws.com/amazon-k8s-cni:v1.12.6-eksbuild.2
+    - 455263428931.dkr.ecr.eu-south-2.amazonaws.com/amazon-k8s-cni:v1.12.6-eksbuild.2
+    - 491585149902.dkr.ecr.ap-southeast-4.amazonaws.com/amazon-k8s-cni:v1.12.6-eksbuild.2
+    - 558608220178.dkr.ecr.me-south-1.amazonaws.com/amazon-k8s-cni:v1.12.6-eksbuild.2
+    sizeBytes: 41111906
+  - names:
+    - docker.io/bitnami/redis@sha256:2f1e62f0ccd8f84daa0ee49e1eb7d9e24081d15f86d97ba3043952de2017ca75
+    - docker.io/bitnami/redis:7.2.3-debian-11-r1
+    sizeBytes: 36690899
+  - names:
+    - 066635153087.dkr.ecr.il-central-1.amazonaws.com/eks/kube-proxy:v1.27.6-minimal-eksbuild.2
+    - 296578399912.dkr.ecr.ap-southeast-3.amazonaws.com/eks/kube-proxy:v1.27.6-minimal-eksbuild.2
+    - 455263428931.dkr.ecr.eu-south-2.amazonaws.com/eks/kube-proxy:v1.27.6-minimal-eksbuild.2
+    - 491585149902.dkr.ecr.ap-southeast-4.amazonaws.com/eks/kube-proxy:v1.27.6-minimal-eksbuild.2
+    - 558608220178.dkr.ecr.me-south-1.amazonaws.com/eks/kube-proxy:v1.27.6-minimal-eksbuild.2
+    sizeBytes: 28974375
+  - names:
+    - 066635153087.dkr.ecr.il-central-1.amazonaws.com/eks/kube-proxy:v1.27.1-minimal-eksbuild.1
+    - 296578399912.dkr.ecr.ap-southeast-3.amazonaws.com/eks/kube-proxy:v1.27.1-minimal-eksbuild.1
+    - 455263428931.dkr.ecr.eu-south-2.amazonaws.com/eks/kube-proxy:v1.27.1-minimal-eksbuild.1
+    - 491585149902.dkr.ecr.ap-southeast-4.amazonaws.com/eks/kube-proxy:v1.27.1-minimal-eksbuild.1
+    - 558608220178.dkr.ecr.me-south-1.amazonaws.com/eks/kube-proxy:v1.27.1-minimal-eksbuild.1
+    sizeBytes: 28931599
+  - names:
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/aws-ebs-csi-driver@sha256:b09b785943922346f0ccd98146fe574ec661ceb49c6c3e4b7f54c4a12372a3eb
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/aws-ebs-csi-driver:v1.25.0
+    sizeBytes: 25143327
+  - names:
+    - 066635153087.dkr.ecr.il-central-1.amazonaws.com/amazon-k8s-cni-init:v1.12.6-eksbuild.2
+    - 296578399912.dkr.ecr.ap-southeast-3.amazonaws.com/amazon-k8s-cni-init:v1.12.6-eksbuild.2
+    - 455263428931.dkr.ecr.eu-south-2.amazonaws.com/amazon-k8s-cni-init:v1.12.6-eksbuild.2
+    - 491585149902.dkr.ecr.ap-southeast-4.amazonaws.com/amazon-k8s-cni-init:v1.12.6-eksbuild.2
+    - 558608220178.dkr.ecr.me-south-1.amazonaws.com/amazon-k8s-cni-init:v1.12.6-eksbuild.2
+    sizeBytes: 21800423
+  - names:
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/csi-node-driver-registrar@sha256:01cc68961f7bfffe5adb1b74cdb7f6c600b7e91ade58f596cbaa9611a7d1a7c1
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/csi-node-driver-registrar:v2.9.3-eks-1-29-2
+    sizeBytes: 6350725
+  - names:
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/csi-node-driver-registrar@sha256:c77aac1fd8b19bf47d6952d2cfc0f095e542bf56c50a023cd7c554280e76879c
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/csi-node-driver-registrar:v2.9.1-eks-1-28-9
+    sizeBytes: 6347282
+  - names:
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/livenessprobe@sha256:c4dc90035920d45404f938ec6f0ee1ed6872d1a0892669b27746fbdb3846ab82
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/livenessprobe:v2.11.0-eks-1-28-9
+    sizeBytes: 5852534
+  - names:
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/livenessprobe@sha256:9e5a31de8fb932f8b5d13266096d9e25c1c33f957a1e09cd18b2bbf61a342672
+    - 602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/livenessprobe:v2.11.0-eks-1-29-2
+    sizeBytes: 5851877
+  - names:
+    - 066635153087.dkr.ecr.il-central-1.amazonaws.com/eks/pause:3.5
+    - 296578399912.dkr.ecr.ap-southeast-3.amazonaws.com/eks/pause:3.5
+    - 455263428931.dkr.ecr.eu-south-2.amazonaws.com/eks/pause:3.5
+    - 491585149902.dkr.ecr.ap-southeast-4.amazonaws.com/eks/pause:3.5
+    - 558608220178.dkr.ecr.me-south-1.amazonaws.com/eks/pause:3.5
+    sizeBytes: 250452
+  nodeInfo:
+    architecture: arm64
+    bootID: 2a9d6c63-541c-486f-ad04-811602442d75
+    containerRuntimeVersion: containerd://1.7.2
+    kernelVersion: 5.10.199-190.747.amzn2.aarch64
+    kubeProxyVersion: v1.27.7-eks-e71965b
+    kubeletVersion: v1.27.7-eks-e71965b
+    machineID: ec22bac44759b80a12927e97688fc8a0
+    operatingSystem: linux
+    osImage: Amazon Linux 2
+    systemUUID: ec22bac4-4759-b80a-1292-7e97688fc8a0
