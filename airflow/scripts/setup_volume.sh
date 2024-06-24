@@ -32,10 +32,10 @@ clone_repos() {
     clone_repo nci-crdc-pipeline git@github.com:cBioPortal/nci-crdc-pipeline.git
     clone_repo genome-nexus-annotation-pipeline git@github.com:genome-nexus/genome-nexus-annotation-pipeline.git
 
-    # CDM lines take a long time + are causing NCI pipeline to fail rn
     #clone_repo cmo-pipelines git@github.com:knowledgesystems/cmo-pipelines.git
-    #clone_repo cdm-utilities_DEPRECATED git@github.com:clinical-data-mining/cdm-utilities_DEPRECATED.git
-    #clone_repo cdm-cbioportal-etl git@github.com:clinical-data-mining/cdm-cbioportal-etl.git
+    clone_repo cdm-cbioportal-etl git@github.com:clinical-data-mining/cdm-cbioportal-etl.git
+    clone_repo cdm-idb-queries git@github.mskcc.org:cdsi/cdm-idb-queries.git
+    clone_repo radiology_met_prediction git@github.com:clinical-data-mining/radiology_met_prediction.git
 }
 
 clone_lfs_repo() {
