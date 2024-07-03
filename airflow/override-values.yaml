@@ -19,17 +19,8 @@ config:
     allowed_deserialization_classes_regexp: airflow\..* .*\..*StudyBuilder
   webserver:
     base_url: https://airflow.cbioportal.dev.aws.mskcc.org
-      #  metrics:
-      #    statsd_on: true
-      # statsd_host: 
-      #statsd_port: 8125
-      #statsd_prefix: airflow
   # Starting in Airflow >=2.5.0, KubernetesExecutor is configured with
   # [kubernetes_executor] and not [kubernetes]
-  #kubernetes_executor:
-  #  pod_template_file: /opt/airflow/pod-template.yaml
-  #  worker_container_repository: jamesko/airflow-worker-nci
-  #  worker_container_tag: 0.1
   kubernetes_executor:
     delete_worker_pods: True
     delete_worker_pods_on_failure: True
@@ -106,7 +97,6 @@ scheduler:
         - name: pv
           mountPath: /opt/airflow/git_repos
       # Modify permissions of mountPath to be group writeable, allowing `airflow` user write permissions
-      #command: ["chmod", "-R", "g+w", "/opt/airflow/git_repos"]
       command: ["sh", "-c", "chmod -R g+w /opt/airflow/git_repos"]
     - name: cdm-setup
       image: jamesko/airflow:1.2
@@ -167,13 +157,6 @@ workers:
       secret:
         ## assumes that `Secret/airflow-hpc3-ssh-keyfile` contains an SSH key called `id_rsa`
         secretName: airflow-hpc3-ssh-keyfile
-    # This airflow-config ConfigMap has already been defined by Airflow's charts, no need to define it here.
-    #- name: config
-    #  configMap:
-    #    name: airflow-config
-    #- name: pod-template
-    #  configMap:
-    #    name: airflow-config
 
 logs:
   persistence:
