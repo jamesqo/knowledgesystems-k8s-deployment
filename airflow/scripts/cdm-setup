@@ -31,5 +31,6 @@ clone_repo() {
     fi	
 }
 
-clone_repo cmo-pipelines git@github.com:knowledgesystems/cmo-pipelines.git
 clone_repo cdm-cbioportal-etl git@github.com:clinical-data-mining/cdm-cbioportal-etl.git
+clone_repo cdm-idb-queries git@github.mskcc.org:cdsi/cdm-idb-queries.git
+clone_repo radiology_met_prediction git@github.com:clinical-data-mining/radiology_met_prediction.git
