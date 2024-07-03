@@ -38,6 +38,7 @@ function delete-airflow-namespace() {
     afctl create cm airflow-cdm-setup --from-file=cdm-setup=$AIRFLOW_DEPLOYMENT/scripts/cdm-setup
     afctl create secret generic airflow-gcp-keyfile --from-file=gcp_key.json=$AIRFLOW_DEPLOYMENT/secrets/gcp_key.json
     afctl create secret generic airflow-git-secret --from-file=id_ed25519=$AIRFLOW_DEPLOYMENT/secrets/id_ed25519 --from-file=known_hosts=$AIRFLOW_DEPLOYMENT/secrets/known_hosts
+    afctl create secret generic airflow-hpc3-ssh-keyfile --from-file=id_rsa=$AIRFLOW_DEPLOYMENT/secrets/id_rsa
 
     kubectl apply -f $AIRFLOW_DEPLOYMENT/ingress/airflow-ingress.yaml
 }
