@@ -25,10 +25,6 @@ images:
     repository: jamesko/airflow
     tag: "1.2"
     pullPolicy: Always
-  #pod_template:
-  #  repository: jamesko/airflow-init
-  #  tag: "0.2"
-  #  pullPolicy: Always
 
 env:
   - name: "PYTHONPATH"
@@ -55,9 +51,6 @@ scheduler:
     - name: pv
       mountPath: /opt/airflow/git_repos
       readOnly: false
-    #- name: pod-template
-    #  mountPath: /opt/airflow/pod-template.yaml
-    #  subPath: pod_template_file.yaml
     - name: cdm-setup
       mountPath: /opt/airflow/scripts
       readOnly: true
@@ -66,9 +59,6 @@ scheduler:
     - name: pv
       persistentVolumeClaim:
         claimName: efs-pv-claim
-    #- name: pod-template
-    #  configMap:
-    #    name: airflow-config
     - name: cdm-setup
       configMap:
         name: airflow-cdm-setup
@@ -100,7 +90,11 @@ scheduler:
           mountPath: /opt/airflow/scripts
       command: ["bash", "/opt/airflow/scripts/cdm-setup"]
   
-  # TODO need root access so packages like java, vim can be apt-get installed
+  # TODO: it would be nice to be able to run commands as root,
+  # so we're able to apt-get install packages like java / vim without
+  # explicitly having to specify them in the Docker image.
+  # I tried the following lines to get `sudo` working, but it doesn't
+  # really help because I don't know the password for the `airflow` user...
   #securityContexts:
   #  container:
   #    allowPrivilegeEscalation: true
@@ -128,9 +122,6 @@ workers:
       mountPath: /opt/airflow/pod_templates/pod_template_file.yaml
       subPath: pod_template_file.yaml
       readOnly: true
-    #- name: pod-template
-    #  mountPath: /opt/airflow/pod-template.yaml
-    #  subPath: pod_template_file.yaml
 
   extraVolumes:
     - name: pv
