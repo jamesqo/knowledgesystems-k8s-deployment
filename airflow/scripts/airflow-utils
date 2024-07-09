@@ -93,6 +93,13 @@ function install-airflow-chart() {
 }
 
 function reboot-airflow-server() {
+    # TODO: there is a volume leakage occurring every time this function is run--
+    # the postgres backend for Airflow creates + attaches a new EBS volume each time, without
+    # ever deleting the old one. This causes problems because a max of 26 volumes can be
+    # attached to an EC2 Linux instance. We need to make sure that old volumes are deleted,
+    # either by changing their lifecycle policy upon creation or deleting them manually in
+    # this script.
+
     delete-airflow-namespace
     delete-airflow-chart
     delete-airflow-pvcs
