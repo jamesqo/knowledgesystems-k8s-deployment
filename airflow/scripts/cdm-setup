@@ -6,6 +6,8 @@
 ## afctl delete cm airflow-cdm-setup
 ## airflow create cm airflow-cdm-setup --from-file=scripts/cdm-setup
 
+## TODO: since this script is CDM-specific, it should be moved to the CDM repo.
+
 REPOS_DIR=/opt/airflow/git_repos
 cd "$REPOS_DIR"
 

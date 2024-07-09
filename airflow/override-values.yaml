@@ -22,6 +22,7 @@ config:
 
 images:
   airflow:
+    # TODO: the Docker image should live under the cbioportal/ namespace
     repository: jamesko/airflow
     tag: "1.2"
     pullPolicy: Always
@@ -79,7 +80,10 @@ scheduler:
           mountPath: /opt/airflow/git_repos
       # Modify permissions of mountPath to be group writeable, allowing `airflow` user write permissions
       command: ["sh", "-c", "chmod -R g+w /opt/airflow/git_repos"]
+
+    # TODO: since this script is CDM-specific, it should be moved to the CDM repo
     - name: cdm-setup
+      # TODO: Docker image should live under cbioportal/ namespace
       image: jamesko/airflow:1.2
       securityContext:
         runAsUser: 0
