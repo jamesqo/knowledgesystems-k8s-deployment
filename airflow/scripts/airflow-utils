@@ -40,7 +40,7 @@ function delete-airflow-namespace() {
     afctl create secret generic airflow-git-secret --from-file=id_ed25519=$AIRFLOW_DEPLOYMENT/secrets/id_ed25519 --from-file=known_hosts=$AIRFLOW_DEPLOYMENT/secrets/known_hosts
     afctl create secret generic airflow-hpc3-ssh-keyfile --from-file=id_rsa=$AIRFLOW_DEPLOYMENT/secrets/id_rsa
 
-    afctl apply -f $AIRFLOW_DEPLOYMENT/../ingress/airflow-ingress.yaml
+    afctl apply -f $AIRFLOW_DEPLOYMENT/../ingress/${AIRFLOW_NS}-ingress.yaml
 }
 
 function delete-airflow-chart() {
