@@ -14,6 +14,15 @@ config:
     smtp_mail_from: cbioportalpipelines@gmail.com
   core:
     allowed_deserialization_classes_regexp: airflow\..* .*\..*StudyBuilder
+
+    # For more information on Airflow performance, refer to:
+    # https://airflow.apache.org/docs/apache-airflow/stable/faq.html#how-to-improve-dag-performance
+    # Up to 500 tasks per scheduler, across all DAGs
+    parallelism: 500
+    # Up to 100 active tasks per DAG
+    max_active_tasks_per_dag: 100
+    # Up to 16 runs of the same DAG (this is the default)
+    max_active_runs_per_dag: 16
   webserver:
     base_url: https://airflow.cbioportal.dev.aws.mskcc.org
   kubernetes_executor:
